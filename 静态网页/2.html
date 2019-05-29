@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="js/swiper.min.css">
+	<style>
+		*{padding:0;margin:0;text-decoration: none;}
+		header{
+			width: 1140px;
+			height: 108px;
+			/*border: 1px solid red;*/
+			margin: 0 auto;
+		}
+		header .logo{
+			width: 100px;
+			height: 108px;
+			/*border: 1px solid red;*/
+			float: left;
+			font-size: 0;
+			text-align: center;
+		}
+
+		.text1{
+			font-size: 20px;
+		}
+		.text2{
+			font-size: 8px;
+		}
+		nav{
+			width: 1030px;
+			height: 108px;
+			/*border: 1px solid red;*/
+			float: left;
+		}
+		.nav-top-left,.nav-top-right{
+			width:100px;
+			height: 30px;
+			/*border: 1px solid red;*/
+			float: right;
+			color: black;
+		}
+		.nav-top-left{
+			background: url(img/diqiu-gray.png) no-repeat;
+			text-align: center;
+			padding-top:6px; 
+		}
+		.nav-top-left:hover{
+			background: url(img/diqiu.png) no-repeat;
+			color: #0ab3e6;
+		}
+		.nav-top-right{
+			background: url(img/gray.png) no-repeat;
+			text-align: center;
+			padding-top:6px; 
+		}
+		.nav-top-right:hover{
+			background: url(img/blue.png) no-repeat;
+			color: #0ab3e6;
+		}
+		.nav-top-button{
+			width: 0px;
+			height: 0px;
+			border-top: 12px solid black;
+			border-right: 12px solid transparent;
+			border-left: 12px solid transparent;
+			float: right;
+		}
+		.nav-top-button ul{
+			list-style:none;
+			float: left;
+
+		}
+		.yinchan a{
+			 display: block;
+             width: 90px;
+             height: 20px;
+             background: gray;
+             /*border: 1px solid red;*/
+             text-align: center;
+             color: white; 
+             position: relative;
+             right: 40px;
+		}
+		.yinchan{
+			margin-top:0px; 
+			display: none;
+		}
+		.nav-top-button:hover .yinchan{
+			display: block;
+		}
+
+		.nav-bottom{
+			width: 1030px;
+			height: 70px;
+			float: left;
+			/*border:1px solid red;*/
+		}
+		.nav-bottom ul li{
+			list-style: none;
+			font-weight: bold;
+			float: left;
+			margin: 24px 56px;
+		}
+		.soushuo{
+			width: 30px;
+			height: 30px;
+			background: #8a8a8a;
+			border-radius:50%;
+			float: right;
+			margin: 20px 20px;
+		}
+		.soushuo:hover{
+			background: #0ab3e6;
+		}
+		.swiper-container{width: 100%;height: 500px;}
+	/*Three*/
+		.Three{
+			width: 100%;
+			height: 300px;
+			background-color: #f0f0f0;
+			/*border:1px solid red;*/
+		}
+		.Three .up{
+			text-align: center;
+			font-size: 32px;
+			color:#707070; 
+			padding-top: 30px;
+			/*border:1px solid red;*/
+		}
+		.Three .below{
+			width: 1000px;
+			height: 120px;
+			/*border:1px solid red;*/
+			margin: 40px auto;
+		}
+		.Three .below li{
+			width: 100px;
+			height: 100px;
+			float: left;
+			list-style: none;
+			text-align: center;
+			margin: 30px 32px;
+			
+		}
+		.below li img{
+			margin-left:10px;
+		}
+	/*Four*/
+		.Four{
+			width: 100%；
+			height: 550px;
+			/*border:1px solid red;*/
+		}
+		.Four-one{
+			width: 1140px;
+			height: 500px;
+			margin: 50px auto;
+			position:relative;
+			/*border:1px solid red;*/
+		}
+		.four-up li,.four-below li{
+			width: 364px;
+			height: 250px;
+			list-style: none;
+			float: left;
+			/*border:1px solid red;*/
+		}
+		.four-up li::before,.four-below li::before{
+			content: "";
+			width: 364px;
+			height: 250px;
+			background: blue;
+			display: inline-block;
+			position:absolute;
+			opacity: 0;
+			/*border:1px solid red;*/
+		}
+		.four-up li:hover::before,.four-below li:hover::before{
+			opacity: 0.5;
+			transition: all 1s;
+		}
+		.four-up li img,.four-below li img{
+			width: 364px;
+			height: 220px;	
+		}
+
+	/*five*/
+		.Five{
+			width: 100%;
+			height: 350px;
+			background-color: #f0f0f0;
+		}
+		.Five div{
+			float: left;
+		}
+		.Five-one{
+			width: 570px;
+			margin-left:220px; 
+		}
+		.Five-two{   
+			width: 570px;
+			height:350px;
+			color: #fff;
+			background: #158aca;
+		}
+		.Five-two p{
+			font-size: 32px;
+			margin-left:70px;
+			margin-top:50px;
+		}
+		.Five-two pre{
+			font-size: 16px;
+		}
+		.Five-two button{
+			width: 120px;
+			height: 38px;
+			font-size: 20px;
+			color: blue;
+			background: white;
+			margin-left:70px;
+		}
+	/*Six*/
+		.Six{
+			width: 100%;
+			height: 530px;
+			/*border: 1px solid red;*/
+		}
+		.Six-one{
+			width: 1130px;
+			height: 30px;
+			margin:0 auto;
+			/*border: 1px solid red;*/
+			margin-top: 50px;
+		}
+		.Six-one p,.Six-one div{
+			float: left;
+		}
+		.Six-one #RECENT{
+			width: 130px;
+			height: 20px;
+			background: #1888cd;
+			border-radius:12%;
+			font-size: 16px;
+			color: #fff;
+			text-align: center;
+			margin-top: 5px;
+		}
+		.Six-one #xian{
+			width: 950px;
+			border-top: 1px solid #1888cd;
+			margin-top: 15px;
+		}
+		.Six-one #dian{
+			width: 5px;
+			height: 5px;
+			background: #1888cd;
+			border-radius:50%;
+			margin-top: 13px;
+		}
+		.Six-one #more{
+			width: 32px;
+			height: 14px;
+			background: #1888cd;
+			border-radius:12%;
+			font-size: 2px;
+			color: #fff;
+			text-align: center;
+			margin: 8px 5px;
+		}
+		.Six-two{
+			width: 1130px;
+			height: 100px;
+			margin:0 auto;
+			/*border: 1px solid red;*/
+			margin-top: 30px;
+		}
+		.Six-two p,.Six-two img{
+			float: left;
+		}
+		.Six-two #NEWS,.Six-two #EQUIPMENT{
+			width: 166px;
+			height: 60px;
+			background:#158aca;
+			color: #fff;
+			padding-top:40px; 
+		}
+		.Six-two #NEWS{
+			text-align: center;
+		}
+		.Six-two #EQUIPMENT{
+			width: 450px;
+			padding-left: 40px;
+		}
+		.Six-three{
+			width: 630px;
+			height: 100px;
+			/*border:1px solid red;*/
+			margin-top: 14px;
+			margin-left: 230px;
+			float: left;
+		}
+		.Six-three img,.Six-three p,.Six-three pre{
+			float: left;
+		}
+		.Six-three img{
+			width: 166px;
+			height: 100px;
+			border:1px solid #cdd0d0;
+			background: url(img/xia6.png);
+		}
+		.Six-three p{
+			margin-left: 20px;
+			font-size: 18px;
+		}
+		.Six-three img:hover{
+			width: 166px;
+			height: 100px;
+			background: url(img/xia5.png);
+		}
+		.Six-four{
+			width: 490px;
+			height: 346px;
+			/*border:1px solid red;*/
+			float: left;
+			margin-top: -230px;
+			background-color: #138ac9;
+		}
+		.Six-four .xia4{
+			width: 490px;
+			height: 240px;
+		}
+		.Six-four div img{
+			width: 160px;
+			height: 100px;
+		}
+		.Six-four div{
+			background-color: #138ac9;
+		}
+	/*Seven*/
+		.Seven{
+			width: 100%;
+			height: 94px;
+			background-color: #e1e1e1;
+		}
+		.Seven p,.Seven input,.Seven button,.Seven ul li{
+			float: left;
+		}
+		.Seven p{
+			margin-left: 220px;
+			margin-top: 40px;
+		}
+		.Seven input{
+			width: 200px;
+			height: 20px;
+			margin-left: 28px;
+			margin-top: 36px;
+			background: #ececec;
+		}
+		.Seven button{
+			width: 100px;
+			height: 24px;
+			margin-left: 22px;
+			margin-top: 36px;
+			color: #fff;
+			background:#158aca;
+		}
+		.Seven ul{
+			width: 1000px;
+			height: 90px;
+			/*border:1px solid red;*/	
+			margin-left: 850px;
+		}
+		.Seven-one li{
+			width: 40px;
+			height: 40px;
+			/*border:1px solid red;*/
+			list-style: none;
+			float: left;
+			margin-top: 26px;
+			margin-left: 20px;
+		}
+		.Seven-one li img{
+			width: 40px;
+			height: 40px;
+				}
+	</style>
+</head>
+<body>
+	<header>
+		<section class="logo">
+			<img src="img/logo.png" alt="" style="width:70px;height:70px;margin-left:12px;">
+			<span class="text1">兴发传输</span>
+			<span class="text2">XINGFATRANSMISSION</span>
+		</section>
+
+		<nav>
+			<div class="nav-top-button">
+				<ul class="yinchan">
+					<li><a href="#">简体中文</a></li>
+					<li><a href="#">繁体中文</a></li>
+					<li><a href="#">English</a></li>
+				</ul>
+			</div>
+			<a href=""><div class="nav-top-left">
+					语言
+			</div></a>
+			<a href=""><div class="nav-top-right">
+					邮箱      
+			</div></a>
+			<div class="nav-bottom">
+				<ul>
+					<li><a href="#">产地</a></li>
+					<li><a href="#">公司简介</a></li>
+					<li><a href="#">产品</a></li>
+					<li><a href="#">消息</a></li>
+					<li><a href="#">技术中心</a></li>
+					<li><a href="#">联络方式</a></li>
+				</ul>
+				<img src="img/1.png" alt="" class="soushuo">
+			</div>
+		</nav>
+	</header>
+	<!-- 轮播图 -->
+		<div class="swiper-container">
+   			 <div class="swiper-wrapper">
+		        <div class="swiper-slide"><img src="img/tou1.png" alt=""></div>
+		        <div class="swiper-slide"><img src="img/tou2.png" alt=""></div>
+		        <div class="swiper-slide"><img src="img/tou3.png" alt=""></div>
+    		</div>
+    		<div class="swiper-button-prev"></div>
+   			<div class="swiper-button-next"></div>
+   			<div class="swiper-pagination"></div>
+		</div>
+		
+	<!-- Three -->
+		<section class="Three">
+			<div class="up">Products Category</div>
+			<ul class="below">
+				<li><img src="img/5.png" alt="">Coaxial Cable</li>
+				<li><img src="img/6.png" alt="" style="margin-left:12px;">Lan Cable</li>
+				<li><img src="img/7.png" alt="">Composite Cable</li>
+				<li><img src="img/8.png" alt="">Speaker Cable</li>
+				<li><img src="img/9.png" alt="">Alarm Cable</li>
+				<li><img src="img/10.png" alt="">Trunk Cable</li>
+			</ul>
+			
+		</section>
+	<!-- Four -->
+		<section class="Four">
+			<div class="Four-one">
+				<ul class="four-up">
+					<li><img src="img/zhong3.png" alt=""></li>
+					<li style="margin-left:16px;"><img src="img/zhong3.png" alt=""></li>
+					<li style="margin-left:16px;"><img src="img/zhong3.png" alt=""></li>
+				</ul>
+				<ul class="four-below">
+					<li><img src="img/zhong3.png" alt=""></li>
+					<li style="margin-left:16px;"><img src="img/zhong3.png" alt=""></li>
+					<li style="margin-left:16px;"><img src="img/zhong3.png" alt=""></li>
+				</ul>
+			</div>
+		</section>
+	<!-- five -->
+		<section class="Five">
+			<div class="Five-one">
+				<img src="img/zhong4.png" alt="">
+			</div>		
+			<div class="Five-two">
+				<p>关于我们</p>
+				<pre>
+
+	Route parameters are handled in the very 
+	same way as for conventional routing—they
+	represent a segment of the URL that can vary. 
+	The only difference with attribute routing is 
+	that the controller and action name are already 
+	known, so you’re not allowed to		
+				</pre>
+				<button>登记</button>
+			</div>		
+		</section>
+	<!-- six -->
+		<section class="Six">
+			<div class="Six-one">
+				<p id="RECENT">RECENT NEWS</p>
+				<div id="xian"></div>
+				<p id="dian"></p>
+				<p id="more">more</p>
+			</div>
+			<div class="Six-two">
+				<p id="NEWS">NEWS</p>
+				<img src="img/xia7.png" alt="">
+				<p id="EQUIPMENT">EQUIPMENT</p>
+			</div>
+			<div class="Six-three">
+				<img src="" alt="">	
+				<p>2016 German ANGA Cable Show</p>
+				<pre>
+
+   2016.07.09
+   With attribute routing, ordering doesn’t happen 
+   MvcMiddleware scans your app using reflection
+   using RouteAttributes. It then automatically 
+				</pre>
+			</div>
+			<div class="Six-three">
+				<img src="" alt="">	
+				<p>2016 German ANGA Cable Show</p>
+				<pre>
+
+   2016.07.09
+   With attribute routing, ordering doesn’t happen 
+   MvcMiddleware scans your app using reflection
+   using RouteAttributes. It then automatically 
+				</pre>
+			</div>
+			<div class="Six-three">
+				<img src="" alt="">	
+				<p>2016 German ANGA Cable Show</p>
+				<pre>
+
+   2016.07.09
+   With attribute routing, ordering doesn’t happen 
+   MvcMiddleware scans your app using reflection
+   using RouteAttributes. It then automatically 
+				</pre>
+			</div>
+			<div class="Six-four">
+				<img src="img/xia4.png" alt="" class="xia4">
+				<div>
+				<img src="img/xia2.png" alt="">
+				<img src="img/xia1.png" alt="">
+				<img src="img/xia3.png" alt="">
+				</div>
+			</div>
+		</section>
+	<!-- Seven -->
+		<section class="Seven">
+			<p>PRODUCTS</p>
+			<input type="text" alt="Rg59 Coaxial Cable">
+			<button>SEARCH</button>
+			<ul class="Seven-one">
+				<li><img src="img/facebook.png" alt=""></li>
+				<li><img src="img/推特_twitter43.png" alt=""></li>
+				<li><img src="img/谷歌.png" alt=""></li>
+				<li><img src="img/Pinterest.png" alt=""></li>
+				<li><img src="img/in.png" alt=""></li>
+				<li><img src="img/OA.png" alt=""></li>
+			</ul>
+		</section>
+	<!-- eight -->
+		<section class="Eight">
+			
+		</section>
+		<script src="js/swiper.min.js"></script>
+		<script language="javascript"> 
+			var mySwiper = new Swiper('.swiper-container',{
+				pagination : '.swiper-pagination',
+				prevButton:'.swiper-button-prev',
+				nextButton:'.swiper-button-next',
+				paginationClickable :true,
+				effect : 'fade',
+			});
+		</script>
+</body>
+</html>
