@@ -1,0 +1,24 @@
+<style>
+	.user-defined1{
+		width: 100%;
+		height:500px;
+		background: url(img/1.jpg);
+		background-size: 100% 100%;
+		color: #fff;
+		text-align: center;
+	}
+	.user-defined1 div h1{
+		font-weight: bold;
+		font-size: 100px;
+		padding-top: 70px; 
+	}
+	.user-defined1 div p{
+		padding-top: 20px;
+	}
+	.list-unstyled li a{
+		color: gray;
+	}
+	.list-unstyled li a:hover{
+		color: #fff;
+	}
+</style>
